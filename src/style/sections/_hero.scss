@@ -1,6 +1,6 @@
 #hero {
-  min-height: 100vh;
-  height: 100vh;
+  min-height: 90vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   border-bottom: 0px;
@@ -8,6 +8,7 @@
  //new change will appear on website!!! why? 
  background: url("/src/assets/hero.jpg");
  background-position: center;
+ //position: relative;
  //background-position: fixed;
  background-size: cover; 
 
@@ -50,7 +51,9 @@
   }
 
   .hero-cta {
-    display: flex;
+    display: center;
+    bottom: 0;
+    
 
     @include respond(tab-port) {
       justify-content: center;
