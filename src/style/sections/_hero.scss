@@ -1,3 +1,4 @@
+
 #hero {
   min-height: 60vh;
   height: 90vh;
@@ -33,13 +34,103 @@
     background-size: 480px 820px; 
   }
 
+
   .hero-title {
-    font-size: 3.6rem;
+    
+    font-size: 3.6rem;    
     font-weight: 600;
     margin-bottom: 1.2rem; //3.2
     text-align: left;
     color: whitesmoke;
+    
     //padding-bottom: 10px;
+
+    
+    .wrapper{
+      display: flex;
+      //margin: 0;
+      //text-transform: uppercase;
+      
+      
+    }
+    .wrapper .dynamic-txts{
+      margin-left: 0px;
+      height: 3.6rem;
+      line-height: 3.61rem;
+      //background: red;
+      overflow: hidden;
+
+      @include respond(phone) {
+         height: 1.2rem;
+        line-height: 1.2rem;
+        
+      }
+    }
+    .dynamic-txts li{
+      list-style: none;
+      color: #FC6D6D;
+      font-size: 3.6rem;
+      font-weight: 600;
+      position: relative;
+      top: 0;
+
+      animation: slide 6s steps(3) infinite;
+      @include respond(phone) {
+        font-size: 1.2rem;
+        position: relative;
+        top: 0;
+
+        animation: slide 6s steps(3) infinite;
+       
+     }
+    }
+    @keyframes slide {
+      100%{
+        top: -115px;
+        @include respond(phone) {
+          100%{
+            top: -5px;                    
+            
+          }                     
+        
+        }
+     }
+      
+    }
+    
+    
+    .dynamic-txts li span{
+      position: relative;
+      margin: 5px 10px;
+      //line-height: 3.6rem;
+      @include respond(phone) {
+        //margin: 0;
+        top: -1.0px;
+       
+     }
+      
+    }
+    .dynamic-txts li span::after{
+      content: "";
+      position: absolute;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      color: transparent;
+      //background: url("../assets/hero.gif");
+      background: #343F4F;
+      border-left: 2px solid #FC6D6D;
+      animation: typing 2s steps(32) infinite;
+    
+    }
+    @keyframes typing {
+      40%, 60%{
+        left: calc(100% + 30px);
+      }
+      100%{
+        left: 0;
+      }
+    }
 
     @include respond(tab-land) {
       font-size: 4rem;
@@ -56,8 +147,12 @@
     @include respond(phone-xs) {
       font-size: 1.2rem;
     }
+  
   }
+  
 
+
+  
   .hero-cta {
     display: center;
    
