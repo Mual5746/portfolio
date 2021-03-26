@@ -29,7 +29,7 @@
  
   @include respond(phone) {
     padding: 0rem $default-font-size;
-    height: 60vh;
+    height: 95vh;
     background-size: 480px 820px; 
   }
 
@@ -77,4 +77,6 @@
       }
     }
   }
+
+  
 }
