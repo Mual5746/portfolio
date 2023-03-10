@@ -1,0 +1,193 @@
+#hero {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  border-bottom: 0px;
+  background: $white-color;
+  font-weight: 400;
+  color: $dark-blue-text;
+  padding: 0rem 5.6rem;
+  margin-bottom: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+
+  // Set position sticky so the jumbotron stays fixed while you scroll.
+  // position: sticky;
+
+  // If you want to set a background image on the hero section, uncomment these with your custom image
+
+  background: url("/src/assets/hero.gif");
+  background-position: center;
+  background-attachment: fixed;
+  //position: sticky;
+  background-size: cover;  
+
+  @include respond(phone) {
+    padding: 0rem $default-font-size;
+    height: 95vh;
+    background-size: cover; 
+    //background-size: 480px 820px; 
+  }
+
+  .hero-title {
+    font-size: 5.0rem;
+    font-weight: 600;
+    margin-bottom: 3.2rem;
+    text-align: center;
+    color: whitesmoke;
+    background-color: #343F4F;
+    
+
+
+    @include respond(tab-land) {
+      font-size: 4rem;
+    }
+    @include respond(tab-port) {
+      font-size: 3.6rem;
+      text-align: center;
+    }
+    @include respond(phone) {
+      font-size: 1.2rem;
+      line-height: 1.2;
+    }
+    @include respond(phone-xs) {
+      font-size: 2.8rem;
+    }
+
+    .wrapper{
+      display: flex;
+      //margin: 0;
+      margin-left: 15%;
+      text-align: center;
+      position: relative;
+      //text-transform: uppercase;
+      
+      
+    }
+    .wrapper .dynamic-txts{
+      //margin-left: 0px;
+      height: 6.0rem;
+      line-height: 6.0rem;
+      //background: red;
+      overflow: hidden;
+      text-align: left;
+
+      @include respond(phone) {
+        height: 1.2rem;
+        line-height: 1.3rem;
+        
+      }
+    }
+    .dynamic-txts li{
+      list-style: none;
+      color: #FC6D6D;
+      font-size: 5.0rem;
+      font-weight: 600;
+      background-color: #343F4F;
+      position: relative;
+      align-items: left;
+      top: 0;
+
+      animation: slide 6s steps(3) infinite;
+      @include respond(phone) {
+        font-size: 1.2rem;
+        //position: relative;
+        top: 0;
+
+        animation: slide 6s steps(3) infinite;
+       
+     }
+    }
+    @keyframes slide {
+      100% {
+        top: -115px;
+        transform: translateY(-100%);        
+      }    
+
+    }
+     // slide 
+     @include respond(phone) {
+      @keyframes slide {
+        100% {
+          top: -25px;
+          transform: translateY(-100%);
+        }
+      }
+    }
+
+    .dynamic-txts li span{
+      //position: relative;
+      margin: 5px 10px;
+      //line-height: 3.6rem;
+      @include respond(phone) {
+        //margin: 0;
+        top: -1.0px;
+       
+     }
+      
+    }
+    .dynamic-txts li span::after{
+      content: "";
+      position: absolute;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      color:  #343F4F;//transparent;
+      //background: url("../assets/hero.gif");
+      background: #343F4F;
+      border-left: 2px solid #FC6D6D;
+      animation: typing 2s steps(32) infinite;
+    
+    }
+    @keyframes typing {
+      50%, 60%{
+        left: calc(100% + 30px);
+      }
+      100%{
+        left: 10%;
+      }
+    }
+
+  } // hero title
+
+
+  .hero-cta {
+    display: flex;
+    justify-content: center;
+    
+
+    @include respond(tab-port) {
+      justify-content: center;
+    }
+
+    & a {
+      font-size: 2.4rem;
+
+      @include respond(phone) {
+        font-size: 1rem;
+      }
+    }
+    
+  }
+  audio {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    opacity: 0.5;
+  }
+  
+  audio::-webkit-media-controls-panel {
+    width: 40px;
+    
+  }
+  
+  audio::-webkit-media-controls-play-button {
+    display: block;
+  }
+  
+  
+}
